@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="تطبيق حفظ القرآن" class="action-bar" />
+    
+    <GridLayout rows="auto, *, auto">
+        <!-- Visibility Toggle Button -->
+        <Button row="0" 
+                text="{{ isTextVisible ? '👁️' : '👁️‍🗨️' }}" 
+                tap="{{ toggleVisibility }}" 
+                class="text-2xl m-4" 
+                horizontalAlignment="center" />
+        
+        <!-- Text Container -->
+        <ScrollView row="1" class="m-4">
+            <StackLayout>
+                <Label text="{{ displayText }}" 
+                       textWrap="true" 
+                       class="text-lg text-right" 
+                       visibility="{{ isTextVisible ? 'visible' : 'collapsed' }}" />
+                
+                <Label text="{{ recognizedWords }}" 
+                       textWrap="true" 
+                       class="text-lg text-green-600 text-right" />
+            </StackLayout>
+        </ScrollView>
+        
+        <!-- Bottom Controls -->
+        <StackLayout row="2" class="m-4">
+            <!-- Microphone Button -->
+            <Button text="{{ isListening ? '⏹️' : '🎤' }}" 
+                    tap="{{ startSpeechRecognition }}" 
+                    class="text-2xl" 
+                    horizontalAlignment="center" />
+            
+            <!-- Status Label -->
+            <Label text="{{ statusMessage }}" 
+                   class="text-sm text-gray-500 text-center" 
+                   textWrap="true" />
+        </StackLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Page {
+    background-color: white;
+}
+
+.action-bar {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+Label {
+    font-size: 16;
+    margin: 8;
+}
+
+Button {
+    font-size: 24;
+    padding: 12;
+    background-color: transparent;
+    border-width: 1;
+    border-color: #dee2e6;
+    border-radius: 8;
+    color: #000;
+}
+
+Button:active {
+    background-color: #f8f9fa;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-green-600 {
+    color: #059669;
+}
+
+.text-gray-500 {
+    color: #6b7280;
+}
